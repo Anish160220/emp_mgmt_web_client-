@@ -34,16 +34,16 @@
 </head>
 <body>
 <div class="login-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form>
         <h2 class="text-center">Log in</h2>       
         <div class="form-group">
             <input type="text" id='username' class="form-control" placeholder="Username" required="required">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required="required">
+            <input type="password" id='password' class="form-control" placeholder="Password" required="required">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block" id='login'>Log in</button>
+            <button type="button" class="btn btn-primary btn-block" id='login'>Log in</button>
         </div>
         <div class="clearfix">
             <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
@@ -52,12 +52,27 @@
     </form>
     <p class="text-center"><a href="#">Create an Account</a></p>
 </div>
-</body>
-
 <script>
     const button = document.getElementById('login');
-    button.addEventListener('click', function(){
-        console.log("button clicked");
+    button.addEventListener('click', function onClick(e){
+        //this is the function that is going to execute
+        
+        const usernameNode = document.getElementById('username');
+        const passwordNode = document.getElementById('password');
+
+        const usernameValue = usernameNode.value;  //value taneko
+        const passwordValue = passwordNode.value;
+
+        console.log(usernameValue, passwordValue);
+
+        //retrieve username
+        //retrieve password
+        //send a request to express server (fetch or axios)
+        //validate the user
+        //finally send the user to dashboard
     })
 </script>
+</body>
+
+
 </html>         
